@@ -1,0 +1,33 @@
+body {
+  background-color: rgb(233, 148, 173);
+}
+.cotlon {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+}
+.cotnho {
+  margin: 100%;
+  padding: 50px;
+  margin: 1px;
+}
+h1 {
+  font-family: segoe ui light;
+  color: rgba(13, 34, 2, 0.979);
+  margin-left: 200px;
+}
+h2 {
+  font-family: segoe ui light;
+  color: rgba(23, 95, 9, 0.932);
+}
+h3 {
+  color: rgba(33, 77, 24, 0.932);
+  font-family: segoe ui light;
+}
+ol {
+  color: rgba(43, 134, 25, 0.932);
+  font-family: segoe ui light;
+}
