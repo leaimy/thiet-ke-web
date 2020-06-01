@@ -9,8 +9,13 @@ body {
   font-family: "Playball", cursive;
   background-size: cover;
   background-repeat: no-repeat;
+  text-align: center;
 
   background-position: center;
+}
+
+::selection {
+  background-color: #108ab1;
 }
 
 .mot {
@@ -57,12 +62,18 @@ body {
   margin-right: auto;
 }
 
-.menu-bar ul li a {
+.menu-bar ul li a:link,
+.menu-bar ul li a:visited {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 20px;
 
   color: inherit;
+}
+
+.menu-bar ul li a:hover {
+  border-bottom: 2px solid #fff;
+  color: #108ab1;
 }
 
 .header-box {
@@ -114,54 +125,56 @@ h1 {
 }
 
 .main-heading {
+  display: inline-block;
   padding: 5px 0;
-  width: 50%;
   border-bottom: 3px solid #fff;
-  margin: 60px auto;
+  margin: 60px 0;
 }
 
 .row {
   display: flex;
   flex-wrap: wrap;
 
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .card {
-  background-color: transparent;
   width: 350px;
   height: 400px;
   perspective: 1500px;
-
-  margin-bottom: 30px;
-}
-
-.card:hover .card--inner {
-  transform: rotateY(180deg);
-}
-
-.card--inner {
   position: relative;
+
+  margin: 20px 10px;
+}
+
+.card:hover .card--front {
+  transform: rotateY(-180deg);
+}
+
+.card:hover .card--back {
+  transform: rotateY(0);
+}
+
+.card--front,
+.card--back {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+
   width: 100%;
   height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
   border: none;
 }
 
-.card--front,
-.card--back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
-  border-radius: 20px;
-}
-
 .card--front {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   color: black;
 
   display: flex;
@@ -197,7 +210,7 @@ h1 {
 }
 
 .card--back {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   color: white;
   transform: rotateY(180deg);
   display: flex;
@@ -226,4 +239,21 @@ h1 {
 .card--back ul li a:hover {
   border-bottom: 3px solid #108ab1;
   color: #108ab1;
+}
+
+@media only screen and (max-width: 1000px) {
+  h1 {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  h1 {
+    font-size: 25px;
+  }
+
+  .menu-bar ul li a:link,
+  .menu-bar ul li a:visited {
+    font-size: 15px;
+  }
 }
